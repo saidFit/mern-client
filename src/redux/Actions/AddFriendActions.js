@@ -36,8 +36,6 @@ export const GetAllFriendAction = () => async(dispatch,getState) =>{
                 Authorization: `Bearer ${user.token}`,
               },
           };
-
-          console.log(config)
         const {data} = await axios.get(`${URL}/friend`,config)
         dispatch({type:GET_FRIENDS,payload:data})
     } catch (error) {
@@ -76,7 +74,8 @@ export const DeleteFriendAction = (_id) => async(dispatch,getState) =>{
                 Authorization: `Bearer ${user.token}`,
               },
           };
-        const {data} = await axios.delete(`${URL}/friend/DeleteFriend/${_id}`,{},config)
+          console.log(config)
+        const {data} = await axios.delete(`${URL}/friend/DeleteFriend/${_id}`,config)
          console.log(data)
          dispatch({type:DELETE_FRIEND,payload:data})
     } catch (error) {

@@ -31,7 +31,7 @@ export const AddFavoriteAction = (Favorite)=> async(dispatch) =>{
 export const DeleteFavoriteAction = (_id) => async(dispatch) =>{
 
     try {
-       const {data} = await axios.delete(`https://mern-media-gxtu.onrender.com/Favorite/delete/${_id}`)
+       const {data} = await axios.delete(`${URL}/Favorite/delete/${_id}`)
        console.log(data)
        dispatch({type:DELETE_FAVORITE,payload:data.FavoriteDeleted})
     } catch (error) {
