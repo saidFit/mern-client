@@ -70,7 +70,7 @@ useEffect(()=>{
             <article className=' bg-gray-0 rounded-md shadow-My-box py-3 px-5 h-fit lg:col-start-1 lg:col-end-2 dark:bg-slate-800 dark:border border-black'>
                 <div className='flex justify-between items-center w-full py-3 border-b border-gray-100'>
                     <div className='flex items-center space-x-4'>
-                        <img onClick={()=> Navigate(`ProfileUser/${user._id}`)} className='w-[55px] h-[55px] object-cover rounded-[50%]' src={!user.IsFile ? user.image :`https://mern-task-app-api-9tep.onrender.co/${user.image}`} alt="img" />
+                        <img onClick={()=> Navigate(`ProfileUser/${user._id}`)} className='w-[55px] h-[55px] object-cover rounded-[50%]' src={!user.IsFile ? user.image :`https://mern-task-app-api-9tep.onrender.com/${user.image}`} alt="img" />
                         <div>
                           <p className='text-lg font-bold'>{user.firstName}-{user.lastName}</p>
                         <p className=' opacity-50'>0 fiends</p>  
@@ -140,7 +140,7 @@ useEffect(()=>{
             <article className='lg:col-start-2 lg:col-end-4'>
                 <section className='bg-gray-0 rounded-md shadow-My-box py-2 px-4 dark:bg-slate-800 dark:border border-black'>
                     <div className='flex items-center space-x-3 py-4 border-b border-gray-100'>
-                    <img className='w-[55px] h-[55px] object-cover rounded-[50%]' src={!user.IsFile ? user.image :`https://mern-task-app-api-9tep.onrender.co/${user.image}`} alt="img" />
+                    <img className='w-[55px] h-[55px] object-cover rounded-[50%]' src={!user.IsFile ? user.image :`https://mern-task-app-api-9tep.onrender.com/${user.image}`} alt="img" />
                         <input onChange={(e)=>settitle(e.target.value)} value={title} className='bg-gray-10 rounded-[30px] shadow-My-box border border-gray-200 outline-none py-3 px-4 w-[85%] dark:bg-slate-800 dark:border' type="text" placeholder="what's on your mind..." />
                        
                     </div>
@@ -236,7 +236,7 @@ useEffect(()=>{
                             return(
                                 <div key={key} className='flex w-full justify-between items-center'>
                                 <div className='flex w-[50%] space-x-3 items-center lg:flex-col xl:flex-row'>
-                                <img className='w-[55px] h-[55px] text-start block object-cover rounded-[50%]' src={!Friend.IsFile ? Friend.image_user :`https://mern-task-app-api-9tep.onrender.co/${Friend.image_user}`} alt="img" />
+                                <img className='w-[55px] h-[55px] text-start block object-cover rounded-[50%]' src={!Friend.IsFile ? Friend.image_user :`https://mern-task-app-api-9tep.onrender.com/${Friend.image_user}`} alt="img" />
                                     <div>
                                       
                                       <p className='text-sm font-[500]'>{Friend.name_user}</p>
