@@ -103,7 +103,7 @@ export const ProfileUser = (
            <div className='relative w-full min-h-[20vh]'>
            <label className='relative w-full'>
             {Single_user.Image_Coverture ? (
-              <img className='w-[990px] h-[250px] object-cover' src={`http://localhost:7070/${Single_user.Image_Coverture}`} alt="img" />
+              <img className='w-[990px] h-[250px] object-cover' src={`https://mern-task-app-api-9tep.onrender.com/${Single_user.Image_Coverture}`} alt="img" />
             ):(
               <img className='w-[990px] h-[250px] object-cover' src="https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" alt="img" />
             )}
@@ -121,7 +121,7 @@ export const ProfileUser = (
             {Single_user._id == user._id ? (
                <label>
               {Single_user.IsFile ? (
-                <img className='cursor-pointer w-[130px] h-[130px] object-cover rounded-[50%]' src={`http://localhost:7070/${Single_user.image}`} alt="" />
+                <img className='cursor-pointer w-[130px] h-[130px] object-cover rounded-[50%]' src={`https://mern-task-app-api-9tep.onrender.com/${Single_user.image}`} alt="" />
               ):(
                 <img className='cursor-pointer w-[130px] h-[130px] object-cover rounded-[50%]' src={Single_user.image} alt="" />
               )}
@@ -132,7 +132,7 @@ export const ProfileUser = (
             ):(
               <label>
               {Single_user.IsFile ? (
-                <img className='cursor-pointer w-[130px] h-[130px] object-cover rounded-[50%]' src={`http://localhost:7070/${Single_user.image}`} alt="" />
+                <img className='cursor-pointer w-[130px] h-[130px] object-cover rounded-[50%]' src={`https://mern-task-app-api-9tep.onrender.com/${Single_user.image}`} alt="" />
               ):(
                 <img className='cursor-pointer w-[130px] h-[130px] object-cover rounded-[50%]' src={Single_user.image} alt="" />
               )}
@@ -185,7 +185,7 @@ export const ProfileUser = (
         <section className='bg-gray-0 mt-4 rounded-md shadow-My-box py-2 px-4 dark:bg-slate-800 dark:border border-black'>
           
         <div className='flex items-center space-x-3 py-4 border-b border-gray-100'>
-        <img className='w-[55px] h-[55px] object-cover rounded-[50%]' src={!Single_user.IsFile ? Single_user.image :`http://localhost:7070/${Single_user.image}`} alt="img" />
+        <img className='w-[55px] h-[55px] object-cover rounded-[50%]' src={!Single_user.IsFile ? Single_user.image :`https://mern-task-app-api-9tep.onrender.com/${Single_user.image}`} alt="img" />
             <input onChange={(e)=>settitle(e.target.value)} value={title} className='bg-gray-10 rounded-[30px] shadow-My-box border border-gray-200 outline-none py-3 px-4 w-[85%] dark:bg-slate-800 dark:border' type="text" placeholder="what's on your mind..." />
            
         </div>
@@ -236,7 +236,7 @@ export const ProfileUser = (
           <div className='flex w-full justify-between items-center'>
             <div className='flex space-x-3 items-center'>
               {Post.IsFile ? (
-                <img className='w-[55px] h-[55px] object-cover rounded-[50%]' src={`http://localhost:7070/${Post.image_user}`} alt="img" />
+                <img className='w-[55px] h-[55px] object-cover rounded-[50%]' src={`https://mern-task-app-api-9tep.onrender.com/${Post.image_user}`} alt="img" />
               ) : (
                 <img className='w-[55px] h-[55px] object-cover rounded-[50%]' src={Post.image_user} alt="img" />
               )}
@@ -260,7 +260,7 @@ export const ProfileUser = (
           <div>
             <h1 className='mb-4'>{Post.title}</h1>
             {Post.IsImagePath && (
-              <img className='w-full rounded-md' src={`http://localhost:7070/${Post.image}`} alt="img" />
+              <img className='w-full rounded-md' src={`https://mern-task-app-api-9tep.onrender.com/${Post.image}`} alt="img" />
             )}
           </div>
 
@@ -304,7 +304,7 @@ export const ProfileUser = (
                             <div className='w-full flex items-center justify-between'>
                               <div className='flex space-x-2 items-center'>
                                 {comment.IsFile ?(
-                                  <img className='w-[55px] h-[55px] object-cover rounded-[50%]'src={`http://localhost:7070/${comment.image_user}`} alt="img" />
+                                  <img className='w-[55px] h-[55px] object-cover rounded-[50%]'src={`https://mern-task-app-api-9tep.onrender.com/${comment.image_user}`} alt="img" />
                                 ):(
                                   <img className='w-[55px] h-[55px] object-cover rounded-[50%]' src={comment.image_user} alt="img" />
                                 )}
@@ -386,7 +386,7 @@ export const ProfileUser = (
                             return(
                                 <div key={key} className='flex w-full justify-between items-center'>
                                 <div className='flex w-[50%]  space-x-3 items-center lg:flex-col xl:flex-row'>
-                                <img className='w-[55px] h-[55px] text-start block object-cover rounded-[50%]' src={!Friend.IsFile ? Friend.image_user :`http://localhost:7070/${Friend.image_user}`} alt="img" />
+                                <img className='w-[55px] h-[55px] text-start block object-cover rounded-[50%]' src={!Friend.IsFile ? Friend.image_user :`https://mern-task-app-api-9tep.onrender.com/${Friend.image_user}`} alt="img" />
                                     <div>
                                       
                                       <p className='text-sm font-[500]'>{Friend.name_user}</p>

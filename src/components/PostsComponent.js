@@ -63,7 +63,7 @@ export const PostsComponent = (
               <Link to={`/ProfileUser/${req_id_user}`}>
             
               {IsFile ? (
-                <img className='w-[50px] h-[50px] object-cover rounded-[50%]' src={`http://localhost:7070/${image_user}`} alt="img" />
+                <img className='w-[50px] h-[50px] object-cover rounded-[50%]' src={`https://mern-task-app-api-9tep.onrender.com/${image_user}`} alt="img" />
               ) : (
                 <img className='w-[50px] h-[55px] object-cover rounded-[50%]' src={image_user} alt="img" />
               )}
@@ -89,7 +89,7 @@ export const PostsComponent = (
           <div>
             <h1 className='mb-4'>{title}</h1>
             {IsImagePath && (
-              <img className='w-full h-[500px] object-cover rounded-md' src={`http://localhost:7070/${image}`} alt="img" />
+              <img className='w-full h-[500px] object-cover rounded-md' src={`https://mern-task-app-api-9tep.onrender.com/${image}`} alt="img" />
             )}
           </div>
 
@@ -134,7 +134,7 @@ export const PostsComponent = (
                               <div className='flex space-x-2 items-center'>
 
                                 {comment.IsFile ?(
-                                  <img className='w-[55px] h-[55px] object-cover rounded-[50%]'src={`http://localhost:7070/${comment.image_user}`} alt="img" />
+                                  <img className='w-[55px] h-[55px] object-cover rounded-[50%]'src={`https://mern-task-app-api-9tep.onrender.com/${comment.image_user}`} alt="img" />
                                 ):(
                                   <img className='w-[55px] h-[55px] object-cover rounded-[50%]' src={comment.image_user} alt="img" />
                                 )}
