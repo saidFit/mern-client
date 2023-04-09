@@ -48,12 +48,9 @@ export const App = () => {
  useEffect(()=>{
   dispatch((getAllPostsAction()))
   dispatch((GetAllFriendAction()))
-
+  dispatch((GetAllFavoritesAction()))
 },[])
 
-useEffect(()=>{
-  return () =>  dispatch((GetAllFavoritesAction()))
-},[])
 
 useEffect(()=>{
   dispatch((GetAllComment()))

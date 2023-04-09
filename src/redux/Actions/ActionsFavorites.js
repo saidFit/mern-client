@@ -9,7 +9,7 @@ export const GetAllFavoritesAction = () => async(dispatch) =>{
         console.log(data)
        return dispatch({type:GET_ALL_FAVORITES,payload:data})
     } catch (error) {
-        
+        throw error;
     }
 
 }
@@ -18,7 +18,7 @@ export const GetAllFavoritesAction = () => async(dispatch) =>{
 export const AddFavoriteAction = (Favorite)=> async(dispatch) =>{
 
     try {
-      const {data} =  await axios.post(`${URL}/Favorite/postFavorite`,Favorite)
+      const {data} =  await axios.post(`${URL}/Favorite/postFavorite/`,Favorite)
         console.log(data)
         dispatch({type:ADD_FAVORITE,payload:data.Favorite})
     } catch (error) {

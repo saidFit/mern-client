@@ -40,7 +40,6 @@ export const GetAllFriendAction = () => async(dispatch,getState) =>{
         dispatch({type:GET_FRIENDS,payload:data})
     } catch (error) {
         if(error.response.data.message){
-            // dispatch({type:TOKEN_EXPIRED,payload:true})
             localStorage.setItem('tokenExpired',true)
             console.log('tokenExpired'+" "+localStorage.getItem('tokenExpired'))
             const {userRegister: { user }} = getState();
