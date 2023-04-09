@@ -1,11 +1,12 @@
 import axios from "axios"
 import { ADD_NEW_COMMENT, GET_ALL_COMMENT } from "../Constants/CommentConstants"
+// import { URL } from "../../App"
 import { URL } from "../../App"
 
 
 
 export const AddNewCommentAction = (comment,setcomment,input) => async(dispatch) =>{
-
+   
     try {
         const {data} = await axios.post(`${URL}/comment/postComment`,comment)
         dispatch({type:ADD_NEW_COMMENT,payload:data})
@@ -17,8 +18,10 @@ export const AddNewCommentAction = (comment,setcomment,input) => async(dispatch)
 
 
 export const GetAllComment = () => async(dispatch) =>{
+    console.log(URL)
     try {
         const {data} = await axios.get(`${URL}/comment/`)
+        console.log(data)
         dispatch({type:GET_ALL_COMMENT,payload:data})
     } catch (error) {
         throw error;

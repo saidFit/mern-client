@@ -6,7 +6,7 @@ import { URL } from "../../App"
 export const GetAllFavoritesAction = () => async(dispatch) =>{
     try {
         const {data} = await axios.get(`${URL}/Favorite`)
-        
+        console.log(data)
        return dispatch({type:GET_ALL_FAVORITES,payload:data})
     } catch (error) {
         
