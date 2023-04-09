@@ -6,25 +6,6 @@ import { USER_SUCCESS_LOGIN } from "../Constants/Constants";
 import { URL } from "../../App"
 
 
-export const AddFriendAction = (user_Added) => async(dispatch,getState) =>{
-
-    try {
-          const {
-            userRegister: { user },
-          } = getState();
-        const config = {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${user.token}`,
-              },
-          };
-          console.log(config)
-       const {data} = await axios.post(`${URL}/friend/AddFriend`,user_Added,config)
-        dispatch({type:ADD_FRIEND,payload:data})
-    } catch (error) {
-        throw error
-    }
-}
 
 export const GetAllFriendAction = () => async(dispatch,getState) =>{
     try {
@@ -60,6 +41,26 @@ export const GetAllFriendAction = () => async(dispatch,getState) =>{
     }
 }
 
+export const AddFriendAction = (user_Added) => async(dispatch,getState) =>{
+
+    try {
+          const {
+            userRegister: { user },
+          } = getState();
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${user.token}`,
+              },
+          };
+       const {data} = await axios.post(`${URL}/friend/AddFriend`,user_Added,config)
+        dispatch({type:ADD_FRIEND,payload:data})
+    } catch (error) {
+        throw error
+    }
+}
+
+
 
 export const DeleteFriendAction = (_id) => async(dispatch,getState) =>{
 
@@ -73,9 +74,7 @@ export const DeleteFriendAction = (_id) => async(dispatch,getState) =>{
                 Authorization: `Bearer ${user.token}`,
               },
           };
-          console.log(config)
         const {data} = await axios.delete(`${URL}/friend/DeleteFriend/${_id}`,config)
-         console.log(data)
          dispatch({type:DELETE_FRIEND,payload:data})
     } catch (error) {
         throw error

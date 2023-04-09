@@ -14,7 +14,8 @@ import { AddFavoriteAction, DeleteFavoriteAction, GetAllFavoritesAction } from '
 import { ImSpinner8 } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 import { getSingleUserAction } from '../redux/Actions/Actions';
-
+import groovyWalkAnimation  from "../lotties/89023-loading-circles.json";
+import Lottie from "lottie-react";
 export const PostsComponent = (
   { _id,
     New_Comment,
@@ -42,19 +43,17 @@ export const PostsComponent = (
   const dispatch = useDispatch() 
 
   const {Favorites} = useSelector((state) => state.AddFavorite)
-  const {loading_Posts}  = useSelector((state) => state.addPost)
+  const {loading_Posts,}  = useSelector((state) => state.addPost)
   const input = useRef(null)
 
   const handleSingleUser = (userId) =>{
     dispatch((getSingleUserAction(userId)))
     window.scrollTo({top: 0, left: 0,});
   }
+ 
 
   return (
     <>
-    
-    {loading_Posts ? (<div className='container mx-auto text-5xl text-[#000000ca] h-[80vh] py-20 w-fit'>{<ImSpinner8 className='Spinner'/>}</div>):(
-
     <section>
       <div className='bg-gray-0 rounded-md shadow-My-box py-4 px-4 mt-8 dark:bg-slate-800 dark:border border-black'>
         <div className='space-y-5'>
@@ -163,7 +162,6 @@ export const PostsComponent = (
 
 
     </section>
-     )}
     </>
   )
 }

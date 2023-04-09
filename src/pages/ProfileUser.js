@@ -52,10 +52,6 @@ export const ProfileUser = (
      dispatch((getSingleUserAction(id)))
     },[])
 
-    useEffect(()=>{
-      console.log(file)
-    },[file])
-
     const handleChangeProfile =(image) =>{
       const formData = new FormData()
             formData.append('image',image)

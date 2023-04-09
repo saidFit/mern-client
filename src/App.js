@@ -27,7 +27,7 @@ export const App = () => {
   const [comment,setcomment] = useState('')
   const [IdClick,setIdClick] = useState(null)
   const [IsclickCreateComment, setIsclickCreateComment] = useState(false)
-  const [SizeScreen,setSizeScreen] = useState('11px')
+  const [SizeScreen,setSizeScreen] = useState('11.4px')
   const [colorButtons,setcolorButtons] = useState('#00D5FA')
   const [backgroundColor,setbackgroundColor] = useState('#F0F0F0')
   const dispatch = useDispatch() 
@@ -39,7 +39,6 @@ export const App = () => {
 
 
   useEffect(()=>{
-    console.log(user)
    if(user){
     localStorage.setItem('Login',JSON.stringify({user,IsValid}))
    }
@@ -59,7 +58,9 @@ useEffect(()=>{
 
 
  const handlePost = () =>{
-
+   if(!title && !image){
+    return false
+   }
   const formData = new FormData()
         formData.append('title',title)
         formData.append('image',image)
@@ -84,7 +85,6 @@ const handleAddFriend = (req_id_user,image_user,name_user,IsFile,type_request) =
    const user_Added = {_id_friend:req_id_user,image_user,name_user,IsFile}
    dispatch((AddFriendAction(user_Added)))
   }else{
-   console.log(type_request)
    dispatch((DeleteFriendAction(req_id_user)))
   }
 }
@@ -140,8 +140,6 @@ useEffect(()=>{
    return
   }
   return setDarkThem('light')
-  
-  console.log(backgroundColor)
 },[backgroundColor])
 
 useEffect(()=>{

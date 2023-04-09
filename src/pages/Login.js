@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 import { DeleteErrors, removeLocalStorageAction, UserLoginAction, UserRegisterAction } from '../redux/Actions/Actions'
 import {ImSpinner8} from 'react-icons/im'
 import {BiShow,BiHide} from 'react-icons/bi'
+import groovyWalkAnimation  from "../lotties/102360-searching-file";
+import groovyWalkAnimation1  from "../lotties/86055-wave-loading-animation.json";
+import Lottie from "lottie-react";
 export const Login = () => {
 
    const [email,setemail] = useState('')
@@ -27,7 +30,9 @@ const handleSubmit = (e) =>{
     return (
 
         <section className='mt-4'>
-            {loading ? (<div className='container mx-auto text-5xl text-[#000000ca] h-[80vh] py-20 w-fit'>{<ImSpinner8 className='Spinner dark:text-white' size={40}/>}</div>):(
+            {loading ?  (<div>
+                <Lottie className='w-[120px] mx-auto h-[170px] mr-auto' animationData={groovyWalkAnimation} loop={true} />
+            </div>):(
                <div className='container mx-auto space-y-8 rounded-md p-3 shadow-My-box bg-gray-0 w-full max-w-[800px] dark:bg-slate-800 dark:border border-black'>
                 <h1 className='text-xl text-primary-500 font-bold w-fit border-b border-primary-300 rounded-br-[20px]'>Login</h1>
             <form className='space-y-6' onSubmit={handleSubmit}>

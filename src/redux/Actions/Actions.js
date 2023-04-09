@@ -48,7 +48,6 @@ export const UserLoginAction = (user_check, setemail, setpassword,user,IsValid) 
         const { data } = await axios.post(`${URL}/user/login`,user_check)
         setemail('')
         setpassword('')
-        console.log(data)
         dispatch({ type: USER_SUCCESS_LOGIN, payload: data})
         dispatch({type:IMAGE_RANDOM_PUP,payload: image_random})
     } catch (error) {

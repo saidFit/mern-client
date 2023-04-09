@@ -47,7 +47,7 @@ export const AddPostReducer = (state={},action) =>{
     const {payload} = action
     switch (action.type){
        case ADD_NEW_POST:
-           return {...state,Posts:[payload,...state.Posts]}
+           return {...state,Posts:[payload,...state.Posts],loading_Posts:false}
         case GET_ALL_POSTS:
             return {...state,Posts:payload,loading_Posts:false}
        case LOADING_EVENT_POST:
@@ -83,7 +83,6 @@ export const AddFriendReducer = (state={},action) =>{
        case GET_FRIENDS:
         return{...state,Friends:payload}
        case DELETE_FRIEND:
-        console.log(payload)
         return {...state,Friends:state.Friends.filter((Friend) => Friend._id !== payload._id)} 
        default:
         return state; 

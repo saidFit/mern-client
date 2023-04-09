@@ -15,9 +15,9 @@ export const getAllPostsAction = () => async(dispatch) =>{
 
 export const AddNewPostAction = (NewPost,settitle,setIsClickImage,IsClickImage) => async(dispatch) =>{
 
+    dispatch({type:LOADING_EVENT_POST})
     try {
        const {data} = await axios.post(`${URL}/post/AddPost/`,NewPost)
-       console.log(data)
         dispatch({type:ADD_NEW_POST,payload:data})
         settitle('')
         setIsClickImage(false)

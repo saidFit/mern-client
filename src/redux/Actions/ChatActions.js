@@ -21,10 +21,8 @@ export const MakeConversationAction = (userr,sender,receiver,dataAdd) => async(d
                 Authorization: `Bearer ${user.token}`,
               },
           };
-          console.log(config)
         const {data} = await axios.post(`${URL}/Conversation/postConversation/${sender}/${receiver}/`,dataAdd,config)
         dispatch({type:MAKE_CONVERSATION,payload:data})
-        console.log(data)
     } catch (error) {
         throw error
     }
@@ -36,7 +34,6 @@ export const SendMessageAction = (message,setText) => async(dispatch) =>{
 
     try {
         const {data} = await axios.post(`${URL}/Message/postmessage/`,message)
-        console.log(data)
         setText('')
         dispatch({type:GET_MESSAGES_COV,payload:data})
     } catch (error) {
