@@ -154,7 +154,7 @@ useEffect(()=>{
 
   return (
 
-    <div basename="/Social" className='App dark:text-white h-fit'>
+    <div  className='App dark:text-white h-fit'>
       <BrowserRouter>
       <Navbar darkThem={darkThem} setDarkThem={setDarkThem} colorButtons={colorButtons}/>
        <div className='Pages h-[100vh]'>
