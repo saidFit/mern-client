@@ -163,10 +163,10 @@ useEffect(()=>{
           <Route path='/'
           element={!user ? <Register/> : <Navigate to='/Social'/>}
           />
-          <Route path='/Login'
+          <Route path='https://mern-task-app-api-9tep.onrender.com/Login'
           element={!user ? <Login/> : <Navigate to='/Social'/>}
           />
-         <Route path='/Social'
+         <Route path='https://mern-task-app-api-9tep.onrender.com/Social'
          element={user ? <Social setDarkThem ={setDarkThem} setbackgroundColor={setbackgroundColor} colorButtons={colorButtons} IdClick={IdClick} handleShowCommnet={handleShowCommnet} settitle ={settitle} HandleFavorite={HandleFavorite} IsclickCreateComment={IsclickCreateComment} setIsclickCreateComment={setIsclickCreateComment} comment={comment} setcomment={setcomment}  handleComment={handleComment} handleAddFriend={handleAddFriend} title={title} image={image} setimage={setimage} handlePost={handlePost} IsClickImage={IsClickImage} setIsClickImage={setIsClickImage} SizeScreen={SizeScreen} setSizeScreen={setSizeScreen} setcolorButtons={setcolorButtons}/> : <Navigate to='/Login'/>}
          />
           <Route path="/ProfileUser/:id"
