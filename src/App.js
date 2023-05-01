@@ -19,6 +19,7 @@ import { AddNewPostAction, getAllPostsAction } from './redux/Actions/PostAction'
 import { Chat } from './pages/chat/Chat'
 
 export const URL = process.env.REACT_APP_SERVER_URL;
+// export const URL = 'http://localhost:7070';
 
 export const App = () => {
   const [image,setimage] = useState('')
@@ -64,6 +65,7 @@ useEffect(()=>{
   const formData = new FormData()
         formData.append('title',title)
         formData.append('image',image)
+        formData.append('imagePath',image.name)
         formData.append('name_user',`${user.firstName}-${user.lastName}`)
         formData.append('image_user',user.image)
         formData.append('req_id_user',user._id)

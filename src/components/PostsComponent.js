@@ -14,8 +14,6 @@ import { AddFavoriteAction, DeleteFavoriteAction, GetAllFavoritesAction } from '
 import { ImSpinner8 } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 import { getSingleUserAction } from '../redux/Actions/Actions';
-import groovyWalkAnimation  from "../lotties/89023-loading-circles.json";
-import Lottie from "lottie-react";
 export const PostsComponent = (
   { _id,
     New_Comment,
@@ -87,8 +85,10 @@ export const PostsComponent = (
           </div>
           <div>
             <h1 className='mb-4'>{title}</h1>
+            
             {IsImagePath && (
-              <img className='w-full h-[500px] object-cover rounded-md' src={`https://mern-task-app-api-9tep.onrender.com/${image}`} alt="img" />
+              // <img className='w-full h-[500px] object-cover rounded-md' src={`http://localhost:7070/assets/${image}`} alt="img" />
+              <img className='w-full h-[500px] object-cover rounded-md' src={`https://mern-task-app-api-9tep.onrender.com/assets/${image}`} alt="img" />
             )}
           </div>
 

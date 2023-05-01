@@ -6,6 +6,8 @@ import { GET_ALL_POSTS } from '../Constants/PostsConstant'
 import { GET_ALL_COMMENT, RELOAD_COMMENT } from '../Constants/CommentConstants'
 import { useNavigate } from 'react-router-dom'
 import { URL } from '../../App'
+
+
 export const UserRegisterAction = (user,Navigate,error_arr,error_single) => async (dispatch) => {
     dispatch({ type: LOADING_EVENT })
     try {
