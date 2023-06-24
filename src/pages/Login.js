@@ -11,7 +11,7 @@ import Lottie from "lottie-react";
 export const Login = () => {
 
    const [email,setemail] = useState('')
-   const [password,setpassword] = useState('')
+   const [password,setpassword] = useState("")
    const [IsShowPss,setIsShowPss] = useState(false)
 
    const dispatch  = useDispatch()
@@ -20,11 +20,8 @@ export const Login = () => {
 
 const handleSubmit = (e) =>{
   e.preventDefault()
-
-  const formData = new FormData()
-        formData.append('email',email)
-        formData.append('password',password)
-    dispatch((UserLoginAction(formData,setemail,setpassword,user,IsValid)))   
+    const user = {email,password}
+    dispatch((UserLoginAction(user,setemail,setpassword,user,IsValid)))   
 }
 
     return (

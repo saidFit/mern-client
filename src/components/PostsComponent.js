@@ -21,7 +21,6 @@ export const PostsComponent = (
     title,
     req_id_user,
     image,
-    IsImagePath,
     name_user,
     image_user,
     location_user,
@@ -58,13 +57,7 @@ export const PostsComponent = (
           <div className='flex w-full justify-between items-center'>
             <div className='flex space-x-3 items-center' onClick={()=>handleSingleUser(req_id_user)}>
               <Link to={`/ProfileUser/${req_id_user}`}>
-            
-              {IsFile ? (
-                <img className='w-[50px] h-[50px] object-cover rounded-[50%]' src={`https://mern-task-app-api-9tep.onrender.com/${image_user}`} alt="img" />
-              ) : (
                 <img className='w-[50px] h-[55px] object-cover rounded-[50%]' src={image_user} alt="img" />
-              )}
-
               </Link>
               <div>
                 <h1 className='text-xl font-[500]'>{name_user}</h1>
@@ -76,20 +69,18 @@ export const PostsComponent = (
               </div>
 
             </div>
-            {Friends.find(Friend => Friend._id_friend == req_id_user) ?  <button style={{background:`${colorButtons}`}} onClick={() => handleAddFriend(req_id_user,image_user,name_user,IsFile,'DeleteFriend')}  className='bg-primary-500 p-3 rounded-[50%] shadow-md dark:bg-primary-500'><HiUserRemove className='text-xl'/></button>:(
+            {Friends.find(Friend => Friend._id_friend == req_id_user) ?  <button style={{background:`${colorButtons}`}} onClick={() => handleAddFriend(req_id_user,image_user,name_user,'DeleteFriend')}  className='bg-primary-500 p-3 rounded-[50%] shadow-md dark:bg-primary-500'><HiUserRemove className='text-xl'/></button>:(
              req_id_user === user._id ?
             <button style={{background:`${colorButtons}`}} className='bg-primary-500 p-3 rounded-[50%] shadow-md dark:bg-primary-500'> < FiUserCheck className='text-xl' /></button>
-            :<button style={{background:`${colorButtons}`}} onClick={() => handleAddFriend(req_id_user,image_user,name_user,IsFile,'AddFriend')} className='bg-primary-500 p-3 rounded-[50%] shadow-md dark:bg-primary-500'><RiUserAddFill className='text-xl' /></button>
+            :<button style={{background:`${colorButtons}`}} onClick={() => handleAddFriend(req_id_user,image_user,name_user,'AddFriend')} className='bg-primary-500 p-3 rounded-[50%] shadow-md dark:bg-primary-500'><RiUserAddFill className='text-xl' /></button>
             )}
             
           </div>
           <div>
             <h1 className='mb-4'>{title}</h1>
             
-            {IsImagePath && (
-              // <img className='w-full h-[500px] object-cover rounded-md' src={`http://localhost:7070/assets/${image}`} alt="img" />
-              <img className='w-full h-[500px] object-cover rounded-md' src={`https://mern-task-app-api-9tep.onrender.com/assets/${image}`} alt="img" />
-            )}
+              <img className='w-full h-[500px] object-cover rounded-md' src={image} alt="img" />
+           
           </div>
 
           <div className='flex px-5 justify-between text-xl items-center w-full'>
@@ -132,11 +123,8 @@ export const PostsComponent = (
                             <div className='w-full flex items-center justify-between'>
                               <div className='flex space-x-2 items-center'>
 
-                                {comment.IsFile ?(
-                                  <img className='w-[55px] h-[55px] object-cover rounded-[50%]'src={`https://mern-task-app-api-9tep.onrender.com/${comment.image_user}`} alt="img" />
-                                ):(
+                                
                                   <img className='w-[55px] h-[55px] object-cover rounded-[50%]' src={comment.image_user} alt="img" />
-                                )}
                                 <p className='font-[500]'>{comment.name_user}</p>
                               </div>
 

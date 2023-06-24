@@ -62,16 +62,15 @@ useEffect(()=>{
    if(!title && !image){
     return false
    }
-  const formData = new FormData()
-        formData.append('title',title)
-        formData.append('image',image)
-        formData.append('imagePath',image.name)
-        formData.append('name_user',`${user.firstName}-${user.lastName}`)
-        formData.append('image_user',user.image)
-        formData.append('req_id_user',user._id)
-        formData.append('location_user',user.location)
-        formData.append('IsFile',user.IsFile)
-     dispatch((AddNewPostAction(formData,settitle,setIsClickImage,IsClickImage)))   
+
+       const Post = {
+        title,
+        name_user:`${user.firstName}-${user.lastName}`,
+        image_user:user.image,
+        req_id_user:user._id,
+        location_user:user.location,
+      }
+     dispatch((AddNewPostAction(Post,image,settitle,setIsClickImage,IsClickImage)))   
 }
 
 
@@ -82,9 +81,11 @@ const handleComment =(_id) =>{
 }
 
 
-const handleAddFriend = (req_id_user,image_user,name_user,IsFile,type_request) =>{
+const handleAddFriend = (req_id_user,image_user,name_user,type_request) =>{
+
   if(type_request == 'AddFriend'){
-   const user_Added = {_id_friend:req_id_user,image_user,name_user,IsFile}
+
+   const user_Added = {_id_friend:req_id_user,image_user,name_user}
    dispatch((AddFriendAction(user_Added)))
   }else{
    dispatch((DeleteFriendAction(req_id_user)))

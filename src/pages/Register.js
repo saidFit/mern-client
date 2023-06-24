@@ -23,7 +23,7 @@ export const Register = () => {
 
 const handleSubmit = (e) =>{
   e.preventDefault()
-
+  console.log(image)
   const formData = new FormData()
         formData.append('firstName',firstName)
         formData.append('lastName',lastName)
@@ -32,8 +32,10 @@ const handleSubmit = (e) =>{
         formData.append('image',image)
         formData.append('email',email)
         formData.append('password',password)
+
+        const user = {firstName,lastName,location,occupation,email,password}
        
-    dispatch((UserRegisterAction(formData,Navigate,error_arr,error_single)))    
+    dispatch((UserRegisterAction(user,image,Navigate,error_arr,error_single)))    
 
    
 

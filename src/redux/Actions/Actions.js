@@ -6,12 +6,17 @@ import { GET_ALL_POSTS } from '../Constants/PostsConstant'
 import { GET_ALL_COMMENT, RELOAD_COMMENT } from '../Constants/CommentConstants'
 import { useNavigate } from 'react-router-dom'
 import { URL } from '../../App'
+import upload from '../../utils/upload'
 
 
-export const UserRegisterAction = (user,Navigate,error_arr,error_single) => async (dispatch) => {
+export const UserRegisterAction = (user,image,Navigate,error_arr,error_single) => async (dispatch) => {
     dispatch({ type: LOADING_EVENT })
+    
+    const url = await upload(image);
+        console.log(url)
     try {
-        const { data } = await axios.post(`${URL}/user/register/`, user)
+        console.log(user);
+        const { data } = await axios.post(`${URL}/user/register/`, {...user,image:url})
         dispatch({ type: USER_SUCCESS, payload: data })
         Navigate('/Login')
     } catch (error) {
